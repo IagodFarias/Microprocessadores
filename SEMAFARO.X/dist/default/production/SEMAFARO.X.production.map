@@ -1,0 +1,36 @@
+MPLINK 5.08, LINKER
+Linker Map File - Created Mon Oct 02 22:48:53 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000066
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000036      
+            54 out of 2182 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     LOOP   0x000036    program     static C:\Users\engen\Documents\1. Iago\2. Programador\Microprocessadores\SEMAFARO.X\SEMAFAROEX.asm
+                    START   0x000019    program     static C:\Users\engen\Documents\1. Iago\2. Programador\Microprocessadores\SEMAFARO.X\SEMAFAROEX.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    START   0x000019    program     static C:\Users\engen\Documents\1. Iago\2. Programador\Microprocessadores\SEMAFARO.X\SEMAFAROEX.asm
+                     LOOP   0x000036    program     static C:\Users\engen\Documents\1. Iago\2. Programador\Microprocessadores\SEMAFARO.X\SEMAFAROEX.asm
+
+

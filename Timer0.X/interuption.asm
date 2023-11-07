@@ -1,0 +1,58 @@
+;criar uma temporização baseado no TIMER0
+;CLOCK INTERNO DE 4MHZ
+;FAÇA UM CÓDIGO QUE RECEBE DUAS ENTRADAS DEPENDENDO DE QUAL ESTÁ SETADA ELE VAI VIBRAR O 
+    ;LED EM UMA FREQUNCIA DIFERNTE    
+    
+#INCLUDE<p16f628a.inc>
+org 0x00
+goto start
+TEMPO		EQU 0X20
+TEMP1		EQU 0X21
+TEMPORIZACAO	EQU 0X22
+ 
+org 0x04
+BCF INTCON,2 
+DECFSZ	TEMPORIZACAO,F
+RETFIE
+BTFSS	PORTB,5
+ GOTO FREQUENCIA0
+ GOTO FREQUENCIA1
+
+FREQUENCIA0 
+MOVWF	TEMPO
+MOVWF	TEMPORIZACAO
+MOVLW	B'00000001'
+XORWF	PORTB,F
+RETFIE
+FREQUENCIA1
+MOVWF	TEMP1
+MOVWF	TEMPORIZACAO
+MOVLW	B'00000001'
+XORWF	PORTB,F
+RETFIE
+start
+    
+banksel PORTB	;habilita interrupção no timer0
+    movlw   B'11100000' 
+    movwf   INTCON
+banksel TRISB	;configura a interrupção no timer0, pra prescaller 1:2, falledge, clk interno
+    movlw   B'00000111' 
+    movwf   OPTION_REG  
+    MOVLW   B'00110000'
+    MOVWF   TRISB
+    BCF	    PORTB,5
+    BCF	    PORTB,4
+    MOVLW   D'15' 
+    MOVWF   TEMPO ;COMEÇA COM A FREQUENCIA DE 1HZ
+    MOVLW   D'8'
+    MOVWF   TEMP1
+FIM goto FIM
+end    
+
+    
+
+    
+    
+    
+
+

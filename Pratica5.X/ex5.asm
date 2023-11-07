@@ -1,0 +1,4 @@
+#include<pic16f628a.inc> 
+__CONFIG _BODEN_OFF & _WDT_OFF & _CP_OFF & _PWRTE_OFF & _LVP_OFF & _MCLRE_OFF &  _INTRC_OSC_NOCLKOUT 
+
+END
